@@ -1,6 +1,6 @@
 import React from "react";
-import NewPlace from "./places/components/NewPlace";
-import Users from "./user/components/Users";
+import NewPlace from "./places/pages/NewPlace";
+import Users from "./user/pages/Users";
 import {
   BrowserRouter as Router,
   Route,
