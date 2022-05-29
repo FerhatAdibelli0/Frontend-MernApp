@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/" exact>
             <Users />
           </Route>
-          <Route path="/new/place">
+          <Route path="/places/new">
             <NewPlace />
           </Route>
           <Redirect to="/" />
