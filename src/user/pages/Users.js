@@ -4,7 +4,7 @@ import UserList from "../components/userList";
 const Users = () => {
   const USERS = [
     {
-      id: "id1",
+      id: "u1",
       name: "Ferhat",
       places: 3,
       image:
