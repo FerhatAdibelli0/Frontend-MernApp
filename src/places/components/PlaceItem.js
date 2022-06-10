@@ -4,6 +4,7 @@ import Button from "../../shared/components/FormElements/Button";
 import "./PlaceItem.css";
 import { Fragment } from "react/cjs/react.production.min";
 import Modal from "../../shared/components/UIElement/Modal";
+import Map from "../../shared/components/UIElement/Map";
 
 const PlaceItem = (props) => {
   const [showMap, setShowMap] = useState(false);
@@ -21,7 +22,7 @@ const PlaceItem = (props) => {
         contentClass="place-item__modal-content"
       >
         <div className="map-container">
-          <h2>THE MAP!</h2>
+          <Map center={props.coordinator} zoom={16} />
         </div>
       </Modal>
       <li className="place-item">
