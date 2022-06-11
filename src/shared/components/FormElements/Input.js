@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import { validate } from "../util/validators";
 import "./Input.css";
 
@@ -26,6 +26,13 @@ const initialState = {
 const Input = (props) => {
   const [formState, dispatch] = useReducer(inputReducer, initialState);
 
+  const { id, onAdd } = props;
+  const { value, isValid } = initialState;
+
+  useEffect(() => {
+    onAdd(id, value, isValid);
+  }, [isValid, id, value, onAdd]);
+
   const inputChangeHandler = (event) => {
     dispatch({
       type: "CHANGE",
@@ -51,6 +58,7 @@ const Input = (props) => {
     ) : (
       <textarea
         id={props.id}
+        type={props.type}
         rows={props.rows || 3}
         value={formState.value}
         onBlur={inputBlurHandler}
