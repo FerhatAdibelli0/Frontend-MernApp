@@ -27,7 +27,7 @@ const Input = (props) => {
   const [formState, dispatch] = useReducer(inputReducer, initialState);
 
   const { id, onAdd } = props;
-  const { value, isValid } = initialState;
+  const { value, isValid } = formState;
 
   useEffect(() => {
     onAdd(id, value, isValid);
