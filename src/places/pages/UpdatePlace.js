@@ -6,6 +6,7 @@ import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
 } from "../../shared/components/util/validators";
+import "./FormPlace.css"
 
 const DUMMY_PLACES = [
   {
@@ -74,13 +75,13 @@ const UpdatePlace = () => {
   }
 
   return (
-    <form>
+    <form className="place-form">
       <Input
         element="input"
         type="text"
         id="input"
         label="Title"
-        onEdit={() => {}}
+        onAdd={() => {}}
         errorText="Please enter valid input."
         validators={[VALIDATOR_REQUIRE()]}
         valid={true}
@@ -91,7 +92,7 @@ const UpdatePlace = () => {
         type="textarea"
         id="description"
         label="Description"
-        onEdit={() => {}}
+        onAdd={() => {}}
         errorText="Please enter valid description(at least 5 characters)."
         validators={[VALIDATOR_MINLENGTH(5)]}
         valid={true}

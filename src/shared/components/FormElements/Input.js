@@ -17,14 +17,12 @@ const inputReducer = (state, action) => {
   }
 };
 
-const initialState = {
-  value: "",
-  isValid: false,
-  isTouched: false,
-};
-
 const Input = (props) => {
-  const [formState, dispatch] = useReducer(inputReducer, initialState);
+  const [formState, dispatch] = useReducer(inputReducer, {
+    value: props.value || "",
+    isValid: props.valid || false,
+    isTouched: false,
+  });
 
   const { id, onAdd } = props;
   const { value, isValid } = formState;
