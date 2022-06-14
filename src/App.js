@@ -3,6 +3,7 @@ import NewPlace from "./places/pages/NewPlace";
 import Users from "./user/pages/Users";
 import UserPlaces from "./places/pages/UserPlaces";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
+import UpdatePlace from "./places/pages/UpdatePlace";
 import {
   BrowserRouter as Router,
   Route,
@@ -24,6 +25,9 @@ const App = () => {
           </Route>
           <Route path="/places/new">
             <NewPlace />
+          </Route>
+          <Route path="/places/:placeId">
+            <UpdatePlace />
           </Route>
           <Redirect to="/" />
         </Switch>
